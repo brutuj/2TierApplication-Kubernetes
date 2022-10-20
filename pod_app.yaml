@@ -1,0 +1,30 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: nsapp
+  labels:
+    app: employees
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: employees
+  name: employees
+  namespace: nsapp
+spec:
+  containers:
+  - image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-app:v1.0
+    name: employees
+    env:
+    - name: DBHOST
+      value: "172.18.0.2"
+    - name: DBPORT
+      value: "3306"
+    - name: DBUSER
+      value: "root"
+    - name: DBPWD
+      value: "pw" 
+    ports:
+    - name: http
+      containerPort: 8080
+      protocol: TCP
