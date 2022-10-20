@@ -19,5 +19,8 @@ spec:
       - name: mysql
         containerPort: 3306
         protocol: TCP
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: "pw"
   dnsPolicy: ClusterFirst
   restartPolicy: Always
