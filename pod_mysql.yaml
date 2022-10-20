@@ -1,3 +1,9 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: nsmysql
+  labels:
+    app: mysql            
 apiVersion: v1
 kind: Pod
 metadata:
@@ -6,8 +12,8 @@ metadata:
   name: mysql
 spec:
   containers:
-  - image: luksa/kubia
-    name: kubia
+  - image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-mysql:v1.0 
+    name: mysql
     resources: {}
     ports:
       - name: mysql
