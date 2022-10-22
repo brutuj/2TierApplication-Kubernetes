@@ -19,6 +19,7 @@ spec:
       containers:
       - name: mysql
         image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-mysql:v1.0
+        imagePullPolicy: "Always"
         ports:
         - name: mysql
           containerPort: 3306
