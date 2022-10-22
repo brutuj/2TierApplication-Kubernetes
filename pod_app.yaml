@@ -12,7 +12,10 @@ spec:
     name: employees
     env:
     - name: DBHOST
-      value: "10.96.143.131"
+      valueFrom:
+        secretKeyRef:
+          name: dbhost
+          key: dbhost
     - name: DBPORT
       value: "3306"
     - name: DBUSER
