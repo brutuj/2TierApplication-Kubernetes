@@ -19,6 +19,7 @@ spec:
       containers:
       - name: employees
         image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-app:v1.0
+        imagePullPolicy: "Always"
         env:
         - name: DBHOST
           valueFrom:
