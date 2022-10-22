@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysqlReplicaSet
+  namespace: nsmysql
+  labels:
+    app: mysql
+    owner: rutuj
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+    template:
+      metadata:
+        app: mysql
+      spec:
+        containers:
+        - image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-mysql:v1.0
+          name: mysql
+          resources: {}
+          ports:
+          - name: mysql
+            containerPort: 3306
+            protocol: TCP
+            env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "pw"
