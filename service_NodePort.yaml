@@ -4,6 +4,7 @@ metadata:
   name: nodeport
   labels:
     app: employees
+    owner: rutuj
   namespace: nsapp
 spec:
   type: NodePort
