@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dbhost
+  labels:
+    app: employees
+  namespace: nsapp
+type: Opaque
+data:
+  dbhost: MTAuMjQ0LjAuNw==
