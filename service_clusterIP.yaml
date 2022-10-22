@@ -5,6 +5,7 @@ metadata:
   namespace: nsmysql
   labels:
     app: mysql
+    owner: rutuj
 spec:
   ports:
   - port: 3306
