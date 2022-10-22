@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   labels:
     app: employees
+    owner: rutuj
   name: employees
   namespace: nsapp
 spec:
