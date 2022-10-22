@@ -20,7 +20,10 @@ metadata:
             image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-app:v1.0
             env:
             - name: DBHOST
-              value: "10.96.143.131"
+              valueFrom:
+                secretKeyRef:
+                  name: dbhost
+                  key: dbhost 
             - name: DBPORT
               value: "3306"
             - name: DBUSER
