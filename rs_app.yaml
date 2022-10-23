@@ -6,33 +6,33 @@ metadata:
   labels:
     app: employees
     owner: rutuj
-  spec:
-    replicas: 3
-    selector:
-      matchLabels:
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
         app: employees
-    template:
-      metadata:
-        labels:
-          app: employees
-      spec:
-        containers:
-        - name: employees
-          image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-app:v1.0
-          env:
-          - name: DBHOST
-            valueFrom:
-              secretKeyRef:
-                name: dbhost
-                key: dbhost 
-          - name: DBPORT
-            value: "3306"
-          - name: DBUSER
-            value: root
-          - name: DBPWD
-            value: pw
-          ports:
-          - name: http
-            containerPort: 8080
-            protocol: TCP
-        dnsPolicy: ClusterFirst 
+    spec:
+      containers:
+      - name: employees
+        image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-app:v1.0
+        env:
+        - name: DBHOST
+          valueFrom:
+            secretKeyRef:
+              name: dbhost
+              key: dbhost 
+        - name: DBPORT
+          value: "3306"
+        - name: DBUSER
+          value: root
+        - name: DBPWD
+          value: pw
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+      dnsPolicy: ClusterFirst 
