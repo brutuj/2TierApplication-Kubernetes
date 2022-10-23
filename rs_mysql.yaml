@@ -11,18 +11,19 @@ spec:
   selector:
     matchLabels:
       app: mysql
-    template:
-      metadata:
+  template:
+    metadata:
+      labels:
         app: mysql
-      spec:
-        containers:
-        - image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-mysql:v1.0
-          name: mysql
-          resources: {}
-          ports:
-          - name: mysql
-            containerPort: 3306
-            protocol: TCP
-            env:
-            - name: MYSQL_ROOT_PASSWORD
-              value: "pw"
+    spec:
+      containers:
+      - image: 899518646067.dkr.ecr.us-east-1.amazonaws.com/webapp-dev-mysql:v1.0
+        name: mysql
+        resources: {}
+        ports:
+        - name: mysql
+          containerPort: 3306
+          protocol: TCP
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "pw"
